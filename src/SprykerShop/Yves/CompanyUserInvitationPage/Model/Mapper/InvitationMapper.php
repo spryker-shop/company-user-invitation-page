@@ -39,20 +39,12 @@ class InvitationMapper implements InvitationMapperInterface
      */
     protected $customerClient;
 
-    /**
-     * @param \SprykerShop\Yves\CompanyUserInvitationPage\Dependency\Client\CompanyUserInvitationPageToCustomerClientInterface $customerClient
-     */
     public function __construct(
         CompanyUserInvitationPageToCustomerClientInterface $customerClient
     ) {
         $this->customerClient = $customerClient;
     }
 
-    /**
-     * @param \Iterator $invitations
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserInvitationCollectionTransfer
-     */
     public function mapInvitations(Iterator $invitations): CompanyUserInvitationCollectionTransfer
     {
         $idCompanyUser = $this->customerClient->getCustomer()->getCompanyUserTransfer()->getIdCompanyUser();
@@ -66,11 +58,6 @@ class InvitationMapper implements InvitationMapperInterface
         return $companyUserInvitationCollectionTransfer;
     }
 
-    /**
-     * @param array $record
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserInvitationTransfer
-     */
     protected function getCompanyUserInvitationTransfer(array $record): CompanyUserInvitationTransfer
     {
         return (new CompanyUserInvitationTransfer())

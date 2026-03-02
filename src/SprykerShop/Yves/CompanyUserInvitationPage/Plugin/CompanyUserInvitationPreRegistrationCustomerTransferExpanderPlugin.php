@@ -17,11 +17,6 @@ use SprykerShop\Yves\CustomerPageExtension\Dependency\Plugin\PreRegistrationCust
  */
 class CompanyUserInvitationPreRegistrationCustomerTransferExpanderPlugin extends AbstractPlugin implements PreRegistrationCustomerTransferExpanderPluginInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return \Generated\Shared\Transfer\CustomerTransfer
-     */
     public function expand(CustomerTransfer $customerTransfer): CustomerTransfer
     {
         $customerTransfer->setCompanyUserInvitationHash(

@@ -54,12 +54,6 @@ class AbstractController extends SprykerAbstractController
         }
     }
 
-    /**
-     * @param string $route
-     * @param string $message
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function redirectToRouteWithSuccessMessage(string $route, string $message): RedirectResponse
     {
         $this->addSuccessMessage($message);
@@ -67,12 +61,6 @@ class AbstractController extends SprykerAbstractController
         return $this->redirectToRoute($route);
     }
 
-    /**
-     * @param string $route
-     * @param string $message
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function redirectToRouteWithInfoMessage(string $route, string $message): RedirectResponse
     {
         $this->addInfoMessage($message);
@@ -80,12 +68,6 @@ class AbstractController extends SprykerAbstractController
         return $this->redirectToRoute($route);
     }
 
-    /**
-     * @param string $route
-     * @param string $message
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function redirectToRouteWithErrorMessage(string $route, string $message): RedirectResponse
     {
         $this->addErrorMessage($message);
@@ -93,11 +75,6 @@ class AbstractController extends SprykerAbstractController
         return $this->redirectToRoute($route);
     }
 
-    /**
-     * @param string $route
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     protected function redirectToRoute(string $route): RedirectResponse
     {
         return $this->redirectResponseInternal($route);

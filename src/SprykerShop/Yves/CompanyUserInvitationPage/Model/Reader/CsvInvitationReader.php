@@ -18,9 +18,6 @@ class CsvInvitationReader implements InvitationReaderInterface
      */
     protected $config;
 
-    /**
-     * @param \SprykerShop\Yves\CompanyUserInvitationPage\CompanyUserInvitationPageConfig $config
-     */
     public function __construct(CompanyUserInvitationPageConfig $config)
     {
         $this->config = $config;
@@ -39,11 +36,6 @@ class CsvInvitationReader implements InvitationReaderInterface
             ->getHeader();
     }
 
-    /**
-     * @param string $importFilePath
-     *
-     * @return \Iterator
-     */
     public function getData(string $importFilePath): Iterator
     {
         return Reader::createFromPath($importFilePath, 'r')

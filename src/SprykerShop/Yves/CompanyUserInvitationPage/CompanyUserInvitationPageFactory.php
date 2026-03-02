@@ -25,17 +25,11 @@ use SprykerShop\Yves\CompanyUserInvitationPage\Model\Validator\ImportFileValidat
  */
 class CompanyUserInvitationPageFactory extends AbstractFactory
 {
-    /**
-     * @return \SprykerShop\Yves\CompanyUserInvitationPage\Form\FormFactory
-     */
     public function createCompanyUserInvitationPageFormFactory(): FormFactory
     {
         return new FormFactory();
     }
 
-    /**
-     * @return \SprykerShop\Yves\CompanyUserInvitationPage\Model\Reader\InvitationReaderInterface
-     */
     public function createCsvInvitationReader(): InvitationReaderInterface
     {
         return new CsvInvitationReader(
@@ -43,9 +37,6 @@ class CompanyUserInvitationPageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\CompanyUserInvitationPage\Model\Mapper\InvitationMapperInterface
-     */
     public function createInvitationMapper(): InvitationMapperInterface
     {
         return new InvitationMapper(
@@ -53,9 +44,6 @@ class CompanyUserInvitationPageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\CompanyUserInvitationPage\Model\Error\ImportErrorHandlerInterface
-     */
     public function createImportErrorsHandler(): ImportErrorHandlerInterface
     {
         return new ImportErrorHandler(
@@ -73,25 +61,16 @@ class CompanyUserInvitationPageFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \SprykerShop\Yves\CompanyUserInvitationPage\Dependency\Client\CompanyUserInvitationPageToCompanyUserInvitationClientInterface
-     */
     public function getCompanyUserInvitationClient(): CompanyUserInvitationPageToCompanyUserInvitationClientInterface
     {
         return $this->getProvidedDependency(CompanyUserInvitationPageDependencyProvider::CLIENT_COMPANY_USER_INVITATION);
     }
 
-    /**
-     * @return \SprykerShop\Yves\CompanyUserInvitationPage\Dependency\Client\CompanyUserInvitationPageToCustomerClientInterface
-     */
     public function getCustomerClient(): CompanyUserInvitationPageToCustomerClientInterface
     {
         return $this->getProvidedDependency(CompanyUserInvitationPageDependencyProvider::CLIENT_CUSTOMER);
     }
 
-    /**
-     * @return \SprykerShop\Yves\CompanyUserInvitationPage\Dependency\Client\CompanyUserInvitationPageToSessionClientInterface
-     */
     public function getSessionClient(): CompanyUserInvitationPageToSessionClientInterface
     {
         return $this->getProvidedDependency(CompanyUserInvitationPageDependencyProvider::CLIENT_SESSION);

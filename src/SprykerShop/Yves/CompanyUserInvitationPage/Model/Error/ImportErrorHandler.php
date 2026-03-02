@@ -23,9 +23,6 @@ class ImportErrorHandler implements ImportErrorHandlerInterface
      */
     protected $sessionClient;
 
-    /**
-     * @param \SprykerShop\Yves\CompanyUserInvitationPage\Dependency\Client\CompanyUserInvitationPageToSessionClientInterface $sessionClient
-     */
     public function __construct(
         CompanyUserInvitationPageToSessionClientInterface $sessionClient
     ) {
@@ -52,9 +49,6 @@ class ImportErrorHandler implements ImportErrorHandlerInterface
         );
     }
 
-    /**
-     * @return \Iterator
-     */
     public function retrieveCompanyUserInvitationImportErrors(): Iterator
     {
         $importErrorsFile = $this->sessionClient->get(CompanyUserInvitationPageConfig::INVITATION_IMPORT_ERRORS_FILE, null);
@@ -65,9 +59,6 @@ class ImportErrorHandler implements ImportErrorHandlerInterface
         return new EmptyIterator();
     }
 
-    /**
-     * @return string
-     */
     protected function getImportErrorsFile(): string
     {
         /** @phpstan-var string */

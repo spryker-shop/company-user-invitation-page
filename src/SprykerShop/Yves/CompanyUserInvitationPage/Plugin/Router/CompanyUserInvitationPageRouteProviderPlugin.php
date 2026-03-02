@@ -145,11 +145,6 @@ class CompanyUserInvitationPageRouteProviderPlugin extends AbstractRouteProvider
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addUserInvitationRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/company/user-invitation', 'CompanyUserInvitationPage', 'Import', 'indexAction');
@@ -158,11 +153,6 @@ class CompanyUserInvitationPageRouteProviderPlugin extends AbstractRouteProvider
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addUserInvitationErrorsRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/company/user-invitation/get-import-errors', 'CompanyUserInvitationPage', 'Import', 'getErrorsAction');
@@ -171,11 +161,6 @@ class CompanyUserInvitationPageRouteProviderPlugin extends AbstractRouteProvider
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addUserInvitationSendRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/company/user-invitation/send', 'CompanyUserInvitationPage', 'Send', 'sendCompanyUserInvitationAction');
@@ -184,11 +169,6 @@ class CompanyUserInvitationPageRouteProviderPlugin extends AbstractRouteProvider
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addUserInvitationSendAllRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/company/user-invitation/send-all', 'CompanyUserInvitationPage', 'Send', 'sendCompanyUserInvitationsAction');
@@ -197,11 +177,6 @@ class CompanyUserInvitationPageRouteProviderPlugin extends AbstractRouteProvider
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addUserInvitationResendRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/company/user-invitation/resend', 'CompanyUserInvitationPage', 'Resend', 'indexAction');
@@ -210,11 +185,6 @@ class CompanyUserInvitationPageRouteProviderPlugin extends AbstractRouteProvider
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addUserInvitationResendConfirmRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/company/user-invitation/resend/confirm', 'CompanyUserInvitationPage', 'Resend', 'confirmAction');
@@ -223,11 +193,6 @@ class CompanyUserInvitationPageRouteProviderPlugin extends AbstractRouteProvider
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addUserInvitationDeleteRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/company/user-invitation/delete', 'CompanyUserInvitationPage', 'Delete', 'indexAction');
@@ -236,11 +201,6 @@ class CompanyUserInvitationPageRouteProviderPlugin extends AbstractRouteProvider
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addUserInvitationDeleteConfirmRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/company/user-invitation/delete/confirm', 'CompanyUserInvitationPage', 'Delete', 'confirmAction');
@@ -249,11 +209,6 @@ class CompanyUserInvitationPageRouteProviderPlugin extends AbstractRouteProvider
         return $routeCollection;
     }
 
-    /**
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
-     */
     protected function addUserInvitationAcceptRoute(RouteCollection $routeCollection): RouteCollection
     {
         $route = $this->buildRoute('/invitation/accept', 'CompanyUserInvitationPage', 'Accept', 'indexAction');

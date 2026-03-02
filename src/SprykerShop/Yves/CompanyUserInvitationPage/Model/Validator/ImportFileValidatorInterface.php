@@ -11,10 +11,5 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 interface ImportFileValidatorInterface
 {
-    /**
-     * @param \Symfony\Component\HttpFoundation\File\UploadedFile $uploadedFile
-     *
-     * @return bool
-     */
     public function isValidImportFile(UploadedFile $uploadedFile): bool;
 }

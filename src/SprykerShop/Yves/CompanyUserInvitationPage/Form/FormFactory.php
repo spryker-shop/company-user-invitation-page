@@ -14,17 +14,11 @@ use Symfony\Component\Form\FormInterface;
 
 class FormFactory extends AbstractFactory
 {
-    /**
-     * @return \Symfony\Component\Form\FormInterface
-     */
     public function getCompanyUserInvitationForm(): FormInterface
     {
         return $this->getFormFactory()->create(CompanyUserInvitationForm::class);
     }
 
-    /**
-     * @return \Symfony\Component\Form\FormFactoryInterface
-     */
     public function getFormFactory(): FormFactoryInterface
     {
         return $this->getProvidedDependency(ApplicationConstants::FORM_FACTORY);

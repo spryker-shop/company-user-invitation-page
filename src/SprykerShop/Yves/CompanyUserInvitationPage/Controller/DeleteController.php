@@ -34,11 +34,6 @@ class DeleteController extends AbstractController
         return $this->view($this->executeIndexAction($request), [], '@CompanyUserInvitationPage/views/invitation-delete/invitation-delete.twig');
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return array
-     */
     protected function executeIndexAction(Request $request): array
     {
         return [
@@ -46,11 +41,6 @@ class DeleteController extends AbstractController
         ];
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function confirmAction(Request $request): RedirectResponse
     {
         $invitationId = (int)$request->get(static::PARAM_ID_COMPANY_USER_INVITATION);

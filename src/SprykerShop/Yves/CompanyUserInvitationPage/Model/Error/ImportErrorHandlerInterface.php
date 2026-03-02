@@ -21,8 +21,5 @@ interface ImportErrorHandlerInterface
         CompanyUserInvitationImportResponseTransfer $companyUserInvitationImportResponseTransfer
     );
 
-    /**
-     * @return \Iterator
-     */
     public function retrieveCompanyUserInvitationImportErrors(): Iterator;
 }

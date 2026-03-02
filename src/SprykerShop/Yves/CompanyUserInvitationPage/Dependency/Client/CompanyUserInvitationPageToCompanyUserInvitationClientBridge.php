@@ -34,66 +34,36 @@ class CompanyUserInvitationPageToCompanyUserInvitationClientBridge implements Co
         $this->companyUserInvitationClient = $companyUserInvitationClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserInvitationImportRequestTransfer $companyUserInvitationImportRequestTransfer
-
-     * @return \Generated\Shared\Transfer\CompanyUserInvitationImportResponseTransfer
-     */
     public function importCompanyUserInvitations(
         CompanyUserInvitationImportRequestTransfer $companyUserInvitationImportRequestTransfer
     ): CompanyUserInvitationImportResponseTransfer {
         return $this->companyUserInvitationClient->importCompanyUserInvitations($companyUserInvitationImportRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserInvitationGetCollectionRequestTransfer $companyUserInvitationGetCollectionRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserInvitationCollectionTransfer
-     */
     public function getCompanyUserInvitationCollection(
         CompanyUserInvitationGetCollectionRequestTransfer $companyUserInvitationGetCollectionRequestTransfer
     ): CompanyUserInvitationCollectionTransfer {
         return $this->companyUserInvitationClient->getCompanyUserInvitationCollection($companyUserInvitationGetCollectionRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserInvitationSendRequestTransfer $companyUserInvitationSendRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserInvitationSendResponseTransfer
-     */
     public function sendCompanyUserInvitation(
         CompanyUserInvitationSendRequestTransfer $companyUserInvitationSendRequestTransfer
     ): CompanyUserInvitationSendResponseTransfer {
         return $this->companyUserInvitationClient->sendCompanyUserInvitation($companyUserInvitationSendRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserTransfer $companyUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserInvitationSendBatchResponseTransfer
-     */
     public function sendCompanyUserInvitations(
         CompanyUserTransfer $companyUserTransfer
     ): CompanyUserInvitationSendBatchResponseTransfer {
         return $this->companyUserInvitationClient->sendCompanyUserInvitations($companyUserTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserInvitationUpdateStatusRequestTransfer $companyUserInvitationUpdateStatusRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserInvitationUpdateStatusResponseTransfer
-     */
     public function updateCompanyUserInvitationStatus(
         CompanyUserInvitationUpdateStatusRequestTransfer $companyUserInvitationUpdateStatusRequestTransfer
     ): CompanyUserInvitationUpdateStatusResponseTransfer {
         return $this->companyUserInvitationClient->updateCompanyUserInvitationStatus($companyUserInvitationUpdateStatusRequestTransfer);
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CompanyUserInvitationTransfer $companyUserInvitationTransfer
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserInvitationTransfer
-     */
     public function getCompanyUserInvitationByHash(
         CompanyUserInvitationTransfer $companyUserInvitationTransfer
     ): CompanyUserInvitationTransfer {

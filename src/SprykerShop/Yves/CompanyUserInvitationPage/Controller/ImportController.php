@@ -113,9 +113,6 @@ class ImportController extends AbstractController
         ];
     }
 
-    /**
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function getErrorsAction(): Response
     {
         $importErrors = $this->getFactory()->createImportErrorsHandler()->retrieveCompanyUserInvitationImportErrors();
@@ -138,11 +135,6 @@ class ImportController extends AbstractController
         return $streamedResponse->send();
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $companyUserInvitationForm
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserInvitationImportResponseTransfer
-     */
     protected function importCompanyUserInvitations(
         FormInterface $companyUserInvitationForm
     ): CompanyUserInvitationImportResponseTransfer {
@@ -157,11 +149,6 @@ class ImportController extends AbstractController
             ->importCompanyUserInvitations($companyUserInvitationImportRequestTransfer);
     }
 
-    /**
-     * @param string $importFilePath
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserInvitationCollectionTransfer
-     */
     protected function getCompanyUserInvitationCollection(string $importFilePath): CompanyUserInvitationCollectionTransfer
     {
         $invitationsArray = $this->getFactory()->createCsvInvitationReader()->getData($importFilePath);
@@ -169,11 +156,6 @@ class ImportController extends AbstractController
         return $this->getFactory()->createInvitationMapper()->mapInvitations($invitationsArray);
     }
 
-    /**
-     * @param \Symfony\Component\Form\FormInterface $companyUserInvitationForm
-     *
-     * @return string
-     */
     protected function getImportFilePath(FormInterface $companyUserInvitationForm): string
     {
         /** @var \SplFileInfo $uploadedFile */
@@ -182,11 +164,6 @@ class ImportController extends AbstractController
         return $uploadedFile->getPathname();
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserInvitationCriteriaFilterTransfer
-     */
     protected function getCriteriaFilterTransfer(Request $request): CompanyUserInvitationCriteriaFilterTransfer
     {
         $filterTransfer = (new FilterTransfer())

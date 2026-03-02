@@ -18,10 +18,5 @@ interface InvitationReaderInterface
      */
     public function getHeaders(string $importFilePath);
 
-    /**
-     * @param string $importFilePath
-     *
-     * @return \Iterator
-     */
     public function getData(string $importFilePath): Iterator;
 }

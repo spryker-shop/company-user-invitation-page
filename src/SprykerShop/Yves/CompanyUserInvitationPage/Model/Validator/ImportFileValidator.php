@@ -19,19 +19,11 @@ class ImportFileValidator implements ImportFileValidatorInterface
      */
     protected $invitationReader;
 
-    /**
-     * @param \SprykerShop\Yves\CompanyUserInvitationPage\Model\Reader\InvitationReaderInterface $invitationReader
-     */
     public function __construct(InvitationReaderInterface $invitationReader)
     {
         $this->invitationReader = $invitationReader;
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\File\UploadedFile $uploadedFile
-     *
-     * @return bool
-     */
     public function isValidImportFile(UploadedFile $uploadedFile): bool
     {
         try {

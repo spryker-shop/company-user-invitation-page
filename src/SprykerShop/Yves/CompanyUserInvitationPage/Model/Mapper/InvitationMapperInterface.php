@@ -12,10 +12,5 @@ use Iterator;
 
 interface InvitationMapperInterface
 {
-    /**
-     * @param \Iterator $invitations
-     *
-     * @return \Generated\Shared\Transfer\CompanyUserInvitationCollectionTransfer
-     */
     public function mapInvitations(Iterator $invitations): CompanyUserInvitationCollectionTransfer;
 }

@@ -35,11 +35,6 @@ class ResendController extends AbstractController
         return $this->view($viewData, [], '@CompanyUserInvitationPage/views/invitation-resend/invitation-resend.twig');
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return array
-     */
     protected function executeIndexAction(Request $request): array
     {
         return [
@@ -47,11 +42,6 @@ class ResendController extends AbstractController
         ];
     }
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function confirmAction(Request $request): RedirectResponse
     {
         $invitationId = (int)$request->get(static::PARAM_ID_COMPANY_USER_INVITATION);

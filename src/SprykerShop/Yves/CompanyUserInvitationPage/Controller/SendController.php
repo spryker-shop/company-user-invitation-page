@@ -23,11 +23,6 @@ class SendController extends AbstractController
      */
     protected const PARAM_ID_COMPANY_USER_INVITATION = 'idCompanyUserInvitation';
 
-    /**
-     * @param \Symfony\Component\HttpFoundation\Request $request
-     *
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
-     */
     public function sendCompanyUserInvitationAction(Request $request): RedirectResponse
     {
         $invitationId = (int)$request->get(static::PARAM_ID_COMPANY_USER_INVITATION);
