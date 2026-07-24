@@ -121,14 +121,10 @@ class CompanyUserInvitationPageRouteProviderPlugin extends AbstractRouteProvider
     public const ROUTE_NAME_INVITATION_DELETE_CONFIRM = 'company/user-invitation/delete/confirm';
 
     /**
-     * Specification:
+     * {@inheritDoc}
      * - Adds Routes to the RouteCollection.
      *
      * @api
-     *
-     * @param \Spryker\Yves\Router\Route\RouteCollection $routeCollection
-     *
-     * @return \Spryker\Yves\Router\Route\RouteCollection
      */
     public function addRoutes(RouteCollection $routeCollection): RouteCollection
     {
