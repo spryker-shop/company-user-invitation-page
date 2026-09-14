@@ -48,13 +48,13 @@ class CompanyUserInvitationForm extends AbstractType
             'required' => true,
             'constraints' => [
                 $this->createNotBlankConstraint(),
-                new Callback([
-                    'callback' => function ($uploadedFile, ExecutionContextInterface $context) {
+                new Callback(
+                    callback: function ($uploadedFile, ExecutionContextInterface $context) {
                         if ($uploadedFile && !$this->getFactory()->createImportFileValidator()->isValidImportFile($uploadedFile)) {
                             $context->buildViolation('company.user.invitation.import.file.invalid')->addViolation();
                         }
                     },
-                ]),
+                ),
             ],
         ]);
     }
