@@ -20,7 +20,8 @@
         "spryker-shop/company-page": "*",
         "spryker/code-sniffer": "*",
         "spryker/router": "*",
-        "spryker/silex": "*"
+        "spryker/silex": "*",
+        "spryker/testify": "*"
     },
     "suggest": {
         "spryker-shop/company-page": "Use this module when you want to use the CompanyPage plugins.",
@@ -29,14 +30,20 @@
     },
     "autoload": {
         "psr-4": {
-            "SprykerShop\\": "src/SprykerShop/"
+            "SprykerShop\\": "src/SprykerShop/",
+            "SprykerShopTest\\Yves\\CompanyUserInvitationPage\\Helper\\": "tests/SprykerShopTest/Yves/CompanyUserInvitationPage/_support/Helper/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SprykerShopTest\\": "tests/SprykerShopTest/"
         }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "cs-check": "phpcs -p -s --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml src/",
-        "cs-fix": "phpcbf -p --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml src/"
+        "cs-check": "phpcs -p -s --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml src/ tests/",
+        "cs-fix": "phpcbf -p --standard=vendor/spryker/code-sniffer/Spryker/ruleset.xml src/ tests/"
     },
     "extra": {
         "branch-alias": {

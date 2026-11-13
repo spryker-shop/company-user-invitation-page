@@ -1,0 +1,21 @@
+namespace: SprykerShopTest\Yves\CompanyUserInvitationPage
+paths:
+    tests: .
+    data: ../../../_data
+    support: _support
+    output: ../../../_output
+coverage:
+    enabled: true
+    remote: false
+    whitelist:
+        include:
+            - '../../../../src/*'
+suites:
+    Yves:
+        path: .
+        actor: CompanyUserInvitationPageTester
+        modules:
+            enabled:
+                - Asserts
+                - \SprykerTest\Shared\Testify\Helper\Environment
+                - \SprykerShopTest\Yves\CompanyUserInvitationPage\Helper\InvitationFileHelper

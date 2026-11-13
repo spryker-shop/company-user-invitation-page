@@ -22,30 +22,30 @@
         </thead>
         <tbody>
         {% for invitation in data.invitations %}
-            <tr>
+            <tr data-qa="invitation-row">
               <td>{{ invitation.firstName }}</td>
               <td>{{ invitation.lastName }}</td>
               <td>{{ invitation.email }}</td>
               <td>{{ invitation.companyBusinessUnitName }}</td>
-              <td>{{ ('company.user.invitation.status.'~invitation.companyUserInvitationStatusKey) | trans }}</td>
+              <td data-qa="invitation-status">{{ ('company.user.invitation.status.'~invitation.companyUserInvitationStatusKey) | trans }}</td>
               <td>
                   <ul class="menu menu--inline">
                       {% if invitation.companyUserInvitationStatusKey == 'new'  %}
                           <li class="menu__item">
-                              <a href="{{ url('company/user-invitation/send', {'idCompanyUserInvitation': invitation.idCompanyUserInvitation}) }}" data-init-single-click>
+                              <a href="{{ url('company/user-invitation/send', {'idCompanyUserInvitation': invitation.idCompanyUserInvitation}) }}" data-init-single-click data-qa="invitation-send-button">
                                 {{ 'company.user.invitation.send.button' | trans }}
                               </a>
                           </li>
                       {% endif %}
                       {% if invitation.companyUserInvitationStatusKey == 'pending'  %}
                           <li class="menu__item">
-                              <a href="{{ url('company/user-invitation/resend', {'idCompanyUserInvitation': invitation.idCompanyUserInvitation}) }}">
+                              <a href="{{ url('company/user-invitation/resend', {'idCompanyUserInvitation': invitation.idCompanyUserInvitation}) }}" data-qa="invitation-resend-button">
                                   {{ 'company.user.invitation.resend.button' | trans }}
                               </a>
                           </li>
                       {% endif %}
                       <li class="menu__item">
-                          <a data-init-single-click
+                          <a data-init-single-click data-qa="invitation-delete-button"
                              href="{{ url('company/user-invitation/delete', {'idCompanyUserInvitation': invitation.idCompanyUserInvitation}) }}">
                               {{ 'company.user.invitation.delete.button' | trans }}
                           </a>

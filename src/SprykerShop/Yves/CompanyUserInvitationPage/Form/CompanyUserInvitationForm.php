@@ -11,6 +11,7 @@ use Spryker\Yves\Kernel\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Validator\Constraints\Callback;
+use Symfony\Component\Validator\Constraints\File;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Context\ExecutionContextInterface;
 
@@ -30,6 +31,12 @@ class CompanyUserInvitationForm extends AbstractType
      */
     protected const VALIDATION_NOT_BLANK_MESSAGE = 'validation.not_blank';
 
+    protected const string VALIDATION_INVALID_FILE_MESSAGE = 'company.user.invitation.import.file.invalid';
+
+    protected const string INVITATIONS_FILE_MAX_SIZE = '500k';
+
+    protected const array INVITATIONS_FILE_MIME_TYPES = ['text/csv', 'text/plain', 'application/csv', 'application/vnd.ms-excel'];
+
     public function getName(): string
     {
         return 'companyUserInvitationForm';
@@ -48,15 +55,26 @@ class CompanyUserInvitationForm extends AbstractType
             'required' => true,
             'constraints' => [
                 $this->createNotBlankConstraint(),
+                $this->createFileConstraint(),
                 new Callback(
                     callback: function ($uploadedFile, ExecutionContextInterface $context) {
                         if ($uploadedFile && !$this->getFactory()->createImportFileValidator()->isValidImportFile($uploadedFile)) {
-                            $context->buildViolation('company.user.invitation.import.file.invalid')->addViolation();
+                            $context->buildViolation(static::VALIDATION_INVALID_FILE_MESSAGE)->addViolation();
                         }
                     },
                 ),
             ],
         ]);
+    }
+
+    protected function createFileConstraint(): File
+    {
+        return new File(
+            maxSize: static::INVITATIONS_FILE_MAX_SIZE,
+            maxSizeMessage: static::VALIDATION_INVALID_FILE_MESSAGE,
+            mimeTypes: static::INVITATIONS_FILE_MIME_TYPES,
+            mimeTypesMessage: static::VALIDATION_INVALID_FILE_MESSAGE,
+        );
     }
 
     protected function createNotBlankConstraint(): NotBlank
